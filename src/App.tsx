@@ -1,5 +1,5 @@
 import './App.css'
-import {Grid, GridItem, Show} from "@chakra-ui/react";
+import {Grid, GridItem} from "@chakra-ui/react";
 
 function App() {
     return (
