@@ -24,7 +24,6 @@ const GameGrid = ({ gameQuery }: Props) => {
           md: 2,
           lg: 3,
           xl: 4,
-          "2xl": 5,
         }}
         gap="2rem"
         marginTop={4}
