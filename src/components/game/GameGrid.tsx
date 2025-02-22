@@ -1,14 +1,13 @@
+import { GameQuery } from "@/App";
 import useGames from "@/hooks/useGames.ts";
-import { Game, Platform } from "@/services/games-service";
+import { Game } from "@/services/games-service";
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
-import { Genre } from "@/services/genres-service";
-import { GameQuery } from "@/App";
 
 interface Props {
-  gameQuery: GameQuery | null;
+  gameQuery: GameQuery;
 }
 
 const GameGrid = ({ gameQuery }: Props) => {
