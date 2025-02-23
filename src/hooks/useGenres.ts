@@ -1,8 +1,15 @@
 import genres from "@/data/genres.ts";
-//import useData from "@/hooks/useData.ts";
-//import {Genre} from "@/services/genres-service.ts";
+import { useQuery } from "@tanstack/react-query";
+import { CACHE_GENRE_KEY, FetchRespone } from "@/services/constants.ts";
+import genresService, { Genre } from "@/services/genres-service";
 
-//const useGenres = () => useData<Genre>('/genres');
-const useGenres = () => ({data: genres, isLoading: false, error: null})
+const useGenres = () => {
+  return useQuery<FetchRespone<Genre>>({
+    queryKey: CACHE_GENRE_KEY,
+    queryFn: genresService.getAll,
+    staleTime: 24 * 60 * 60 * 1000, // 24h
+    initialData: { count: genres.length, results: genres },
+  });
+};
 
 export default useGenres;

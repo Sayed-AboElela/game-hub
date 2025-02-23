@@ -10,7 +10,7 @@ const GameHeading: FC<Props> = ({gameQuery}) => {
     const heading = `${gameQuery.platform?.name || ''} ${gameQuery.genre?.name || ''} Games`;
 
     return (
-        <Heading as='h1' marginBottom={4}>
+        <Heading as='h1' fontSize='2xl' marginBottom={4}>
             {heading}
         </Heading>
     )

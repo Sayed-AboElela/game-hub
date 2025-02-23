@@ -1,4 +1,5 @@
-import create from "./http-service";
+import APIClient from "@/services/api-client.ts";
+import { FetchRespone } from "./constants";
 
 export interface Genre {
   id: number;
@@ -7,9 +8,5 @@ export interface Genre {
   image_background: string;
 }
 
-export interface FetchGenresResponse {
-  count: number;
-  results: Genre[];
-}
 
-export default create("/genres");
+export default new APIClient<FetchRespone<Genre>>('/genres');

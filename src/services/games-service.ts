@@ -1,10 +1,6 @@
-import create from "./http-service";
-
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import APIClient from "./api-client";
+import { FetchRespone } from "./constants";
+import { Platform } from "./platform-service";
 
 export interface Game {
   id: number;
@@ -16,9 +12,4 @@ export interface Game {
   rating: string;
 }
 
-export interface FetchGamesResponse {
-  count: number;
-  results: Game[];
-}
-
-export default create("/games");
+export default new APIClient<FetchRespone<Game>>("/games");

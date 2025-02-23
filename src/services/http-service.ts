@@ -1,21 +1,21 @@
-import apiClient from "./api-client";
+// import apiClient from "./api-client";
 
-class HttpService {
-  endpoint: string;
+// class HttpService {
+//   endpoint: string;
 
-  constructor(endpoint: string) {
-    this.endpoint = endpoint;
-  }
+//   constructor(endpoint: string) {
+//     this.endpoint = endpoint;
+//   }
 
-  getAll<T>() {
-    const controller = new AbortController();
-    const request = apiClient.get<T>(this.endpoint, {
-      signal: controller.signal,
-    });
-    return { request, cancel: () => controller.abort() };
-  }
-}
+//   getAll<T>() {
+//     const controller = new AbortController();
+//     const request = apiClient.get<T>(this.endpoint, {
+//       signal: controller.signal,
+//     });
+//     return { request, cancel: () => controller.abort() };
+//   }
+// }
 
-const intialize = (endpoint: string) => new HttpService(endpoint);
+// const intialize = (endpoint: string) => new HttpService(endpoint);
 
-export default intialize;
+// export default intialize;
