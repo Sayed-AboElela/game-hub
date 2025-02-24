@@ -5,4 +5,5 @@ export const CACHE_GAMES_KEY = ['games'];
 export interface FetchRespone<T> {
     count: number;
     results: T[];
-  }
+    next: string | null
+}
