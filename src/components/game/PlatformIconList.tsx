@@ -10,8 +10,8 @@ import {
 import { MdPhoneIphone } from "react-icons/md";
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs";
-import { Platform } from "@/services/games-service";
 import { IconType } from "react-icons";
+import { Platform } from "@/services/platform-service";
 
 interface Props {
   platforms: Platform[];

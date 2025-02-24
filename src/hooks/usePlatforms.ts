@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import ms from "ms";
 import platforms from "../data/platforms";
 
-// const usePlatforms = () => useData<Platform>("/platforms/lists/parents");
 const usePlatforms = () => {
   return useQuery<FetchRespone<Platform>>({
     queryKey: CACHE_PLATFORM_KEY,
