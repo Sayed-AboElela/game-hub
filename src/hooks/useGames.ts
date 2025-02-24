@@ -1,7 +1,8 @@
-import {GameQuery} from "@/App";
-import {FetchRespone} from "@/services/constants";
-import gamesService, {Game} from "@/services/games-service";
-import {useInfiniteQuery} from "@tanstack/react-query";
+import { GameQuery } from "@/App";
+import { FetchRespone } from "@/services/constants";
+import gamesService, { Game } from "@/services/games-service";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import ms from "ms";
 
 const UseGames = (gameQuery: GameQuery) => {
   return useInfiniteQuery<FetchRespone<Game>, Error>({
@@ -21,7 +22,7 @@ const UseGames = (gameQuery: GameQuery) => {
     getNextPageParam: (lastPage, pages) =>
       lastPage.next ? pages.length + 1 : undefined,
     placeholderData: (previousData, previousQuery) => previousData,
-    staleTime: 24 * 60 * 60 * 1000, // 24h
+    staleTime:ms('24h')
   });
 };
 export default UseGames;
