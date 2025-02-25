@@ -1,12 +1,6 @@
-import GameHeading from "@/components/game/GameHeading.tsx";
-import NavBar from "@/components/navbar/NavBar";
-import { Grid, GridItem, HStack } from "@chakra-ui/react";
-import "./App.css";
-import GameGrid from "./components/game/GameGrid";
-import PlatformSelector from "./components/game/PlatformSelector";
-import SortSelector from "./components/game/SortSelector";
-import GenreList from "./components/genre/GenreList";
+import { Grid } from "@chakra-ui/react";
 import { Outlet } from "react-router";
+import "./App.css";
 
 function App() {
 

@@ -1,6 +1,5 @@
 import { Box } from "@chakra-ui/react";
 import { ReactNode } from "react";
-import { Link } from "react-router";
 
 interface Props {
   children: ReactNode;
