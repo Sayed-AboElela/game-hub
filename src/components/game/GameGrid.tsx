@@ -6,6 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
+import { Link } from "react-router";
 
 const GameGrid = () => {
   const { data, error, isLoading, hasNextPage, fetchNextPage } = useGames();
@@ -42,9 +43,11 @@ const GameGrid = () => {
         {data?.pages?.map((page, index) => (
           <React.Fragment key={index}>
             {page?.results?.map((game: Game) => (
-              <GameCardContainer key={game.id}>
-                <GameCard game={game} />
-              </GameCardContainer>
+              <Link to={`games/${game.id}`}>
+                <GameCardContainer key={game.id}>
+                  <GameCard game={game} />
+                </GameCardContainer>
+              </Link>
             ))}
           </React.Fragment>
         ))}
