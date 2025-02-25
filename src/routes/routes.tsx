@@ -1,17 +1,29 @@
-import App from "@/App";
 import GameDetailsPage from "@/pages/GameDetailsPage";
 import HomePage from "@/pages/HomePage";
 import Layout from "@/pages/Layout";
-import { Route, Routes } from "react-router";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import ErrorBoundary from "./ErrorBoundary";
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Layout />,
+        errorElement: <ErrorBoundary />,
+        children: [
+            {
+                index: true,
+                element: <HomePage />,
+            },
+            {
+                path: "games/:id",
+                element: <GameDetailsPage />,
+            },
+        ],
+    },
+]);
 
 const Routers = () => {
-    return (
-        <Routes>
-            <Route path="/" element={<Layout />}>
-                <Route index element={<HomePage />} />
-                <Route path="games/:id" element={<GameDetailsPage />} />
-            </Route>
-        </Routes>
-    )
-}
+    return <RouterProvider router={router} />;
+};
+
 export default Routers;
