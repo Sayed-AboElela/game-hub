@@ -1,7 +1,7 @@
-import { Trailer } from "@/entities/Trailer"
-import APIClient from "@/services/api-client"
-import { FetchRespone } from "@/services/constants";
 import { useQuery } from "@tanstack/react-query";
+import APIClient from "@/services/api-client";
+import { FetchRespone } from "@/services/constants";
+import Trailer from "@/entities/Trailer";
 
 const useTrailers = (gameId: number) => {
     const apiClient = new APIClient<FetchRespone<Trailer>>(`/games/${gameId}/movies`);

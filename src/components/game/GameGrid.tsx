@@ -1,12 +1,12 @@
-import useGames from "@/hooks/useGames.ts";
-import { Game } from "@/entities/Game";
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
-import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { Link } from "react-router";
+import useGames from "@/hooks/useGames.ts";
+import Game from "@/entities/Game";
+import React from "react";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import GameCardSkeleton from "./GameCardSkeleton";
-import { Link } from "react-router";
 
 const GameGrid = () => {
   const { data, error, isLoading, hasNextPage, fetchNextPage } = useGames();
