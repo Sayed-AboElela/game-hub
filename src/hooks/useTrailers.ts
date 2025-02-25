@@ -7,7 +7,7 @@ const useTrailers = (gameId: number) => {
     const apiClient = new APIClient<FetchRespone<Trailer>>(`/games/${gameId}/movies`);
 
     return useQuery({
-        queryKey: ['games', gameId],
+        queryKey: ['trailers', gameId],
         queryFn: apiClient.getAll
     })
 }
